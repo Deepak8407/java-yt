@@ -1,0 +1,23 @@
+@Parameters
+	@BeforeClass
+	public void setup(String br)
+	{
+		if(br.equals("chrome"))
+		{
+			System.setProperty("webdriver.chrome.driver", readconfig.getChormepath());
+			driver = new ChromeDriver(); // full path of chormedriver = ("C:\Users\Deepak Yadav\eclipse-workspace\Practice_Maven\Drivers\chromedriver.exe");
+			// normally we use instead of abouve = System.getProperty("user.dir")+ "//Drivers//chromedriver.exe");
+			// In simple we refer ./ for describe user.dir =  "./Drivers\\\\chromedriver.exe"
+			//for above we used readconfig.getChormepath();
+		}
+		else if(br.equals("gecko"))
+		{
+			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxpath());
+			driver=new FirefoxDriver();
+		}
+		else if(br.equals("msedge"))
+		{
+			System.setProperty("webdriver.msedge.driver", readconfig.getMicroedgepath());
+			driver=new EdgeDriver();
+		}
+	}	
