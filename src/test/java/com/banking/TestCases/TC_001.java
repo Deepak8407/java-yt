@@ -15,7 +15,6 @@ public void loginTest() throws InterruptedException
 	wobj.getMyAccount();
 	wobj.getMyAccountLogin();
 	wobj.settxtEmailLogin(username);
-	Thread.sleep(2000);
 	Thread.sleep(1000);
 	driver.quit();
 	
